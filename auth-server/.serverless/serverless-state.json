@@ -193,7 +193,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/auth-server/dev/1638037008143-2021-11-27T18:16:48.143Z/auth-server.zip"
+                "S3Key": "serverless/auth-server/dev/1638037822966-2021-11-27T18:30:22.966Z/auth-server.zip"
               },
               "Handler": "handler.getAuthURL",
               "Runtime": "nodejs12.x",
@@ -226,7 +226,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/auth-server/dev/1638037008143-2021-11-27T18:16:48.143Z/auth-server.zip"
+                "S3Key": "serverless/auth-server/dev/1638037822966-2021-11-27T18:30:22.966Z/auth-server.zip"
               },
               "Handler": "handler.getAccessToken",
               "Runtime": "nodejs12.x",
@@ -259,7 +259,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/auth-server/dev/1638037008143-2021-11-27T18:16:48.143Z/auth-server.zip"
+                "S3Key": "serverless/auth-server/dev/1638037822966-2021-11-27T18:30:22.966Z/auth-server.zip"
               },
               "Handler": "handler.getCalendarEvents",
               "Runtime": "nodejs12.x",
@@ -540,7 +540,7 @@
               "GetCalendarEventsLambdaPermissionApiGateway"
             ]
           },
-          "ApiGatewayDeployment1638037001499": {
+          "ApiGatewayDeployment1638037815550": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -893,7 +893,7 @@
     "artifact": "C:\\Users\\User\\OneDrive\\Documents\\CareerFoundry Full-Stack Immersion\\Gatherr\\gatherr\\auth-server\\.serverless\\auth-server.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/auth-server/dev/1638037008143-2021-11-27T18:16:48.143Z",
+    "artifactDirectoryName": "serverless/auth-server/dev/1638037822966-2021-11-27T18:30:22.966Z",
     "artifact": "auth-server.zip"
   }
 }
