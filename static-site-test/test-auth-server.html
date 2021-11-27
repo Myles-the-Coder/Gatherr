@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Test Auth Server</title>
+	</head>
+	<body>
+		<style>
+			body {
+				width: 100vw;
+			}
+			#container {
+				max-width: 100%;
+				text-align: center;
+			}
+			h4 {
+				margin-top: 25px;
+			}
+		</style>
+		<main id="container">
+			<h1>OAuth2 Test</h1>
+			<h4><b>Step: 1</b> Get the Auth URL</h4>
+			<p>Click the button below to get your auth url</p>
+			<button id="getCode">Get OAuth URL</button>
+			<p id="result"></p>
+			<a href target="_blank" id="authURL">Click to authorize</a>
+
+			<h4><b>Step: 2</b> Get your code and exchange for an access token</h4>
+			<p>
+				After you're redirected back to your app on GitHub, copy the code from
+				the URL.
+			</p>
+			<br />
+			<label>Code Input</label>
+			<input type="text" id="code" value="" />
+			<button id="getToken">Get Token</button>
+			<p id="accessToken"></p>
+
+			<h4><b>Step: 3</b> Get the calender events using your access token</h4>
+			<button id="getEvents">Get Events</button>
+			<p id="events"></p>
+		</main>
+		<script type="text/javascript">
+			// Step 1
+			const getCodeElement = document.getElementById('getCode');
+			const resultElement = document.getElementById('result');
+			const resultLink = document.getElementById('authURL');
+			const getAuthURL =
+				'https://n1dndio4ce.execute-api.us-east-2.amazonaws.com/dev/api/get-auth-url';
+
+			getCodeElement.onclick = () => {
+				fetch(getAuthURL)
+					.then(res => res.json())
+					.then(data => {
+						const result = JSON.stringify(data);
+						const { authUrl } = JSON.parse(result);
+						resultElement.innerText = result;
+						resultLink.href = authUrl;
+					});
+			};
+
+			// Step 2
+			const codeValue = document.getElementById('code');
+			const getAccessToken = document.getElementById('getToken');
+			const accessTokenElement = document.getElementById('accessToken');
+			const getToken =
+				'https://n1dndio4ce.execute-api.us-east-2.amazonaws.com/dev/api/token';
+
+			getAccessToken.onclick = () => {
+				let code = codeValue.value;
+
+				if (decodeURIComponent(code) === code) {
+					code = encodeURIComponent(codeValue.value);
+				}
+
+				const getTokenRequest = `${getToken}/${code}`;
+
+				fetch(getTokenRequest)
+					.then(res => res.json())
+					.then(data => {
+						accessTokenElement.innerText = JSON.stringify(data);
+					});
+			};
+
+			// Step 3
+			const getEventsBtn = document.getElementById('getEvents');
+			const events = document.getElementById('events');
+			const getCalendarEvents =
+				'https://n1dndio4ce.execute-api.us-east-2.amazonaws.com/dev/api/get-events';
+
+			getEventsBtn.onclick = () => {
+				const { access_token } = JSON.parse(accessTokenElement.innerText);
+				const eventRequest = getCalendarEvents + '/' + access_token;
+				fetch(eventRequest)
+					.then(res => res.json())
+					.then(json => {
+						events.innerText = JSON.stringify(json, null, 2);
+					});
+			};
+		</script>
+	</body>
+</html>
