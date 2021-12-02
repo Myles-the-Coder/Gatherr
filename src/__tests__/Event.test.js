@@ -33,6 +33,8 @@ describe('<Event/> component', () => {
 
 	test('collapsed state is toggled on button click', () => {
 		EventWrapper.find('.details-btn').simulate('click');
-		expect(EventWrapper.state('collapsed')).toBe(true || false);
+		expect(EventWrapper.state('collapsed')).toBe(true);
+		EventWrapper.find('.details-btn').simulate('click');
+		expect(EventWrapper.state('collapsed')).toBe(false);
 	});
 });

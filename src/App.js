@@ -13,7 +13,7 @@ class App extends React.Component {
 		this.state = {
 			events: [],
 			locations: [],
-      currentLocation: 'all',
+			currentLocation: 'all',
 			numberOfEvents: 32,
 		};
 	}
@@ -32,27 +32,28 @@ class App extends React.Component {
 	}
 
 	updateEvents = (location, eventCount) => {
-    console.log(eventCount)
 		getEvents().then(events => {
 			let locationEvents =
 				location === 'all'
 					? events
 					: events.filter(event => event.location === location);
 			this.setState({
-				events:locationEvents.slice(0, eventCount ? eventCount : this.state.numberOfEvents)
+				events: locationEvents.slice(
+					0,
+					eventCount ? eventCount : this.state.numberOfEvents
+				),
 			});
 		});
 	};
-  
+
 	render() {
 		const { events, locations, numberOfEvents, currentLocation } = this.state;
-    console.log(numberOfEvents)
 		return (
 			<div className='App'>
 				<img src={Logo} alt='Gatherr-logo' className='logo' />
 				<CitySearch locations={locations} updateEvents={this.updateEvents} />
 				<NumberOfEvents
-          currentLocation={currentLocation}
+					currentLocation={currentLocation}
 					numberOfEvents={numberOfEvents}
 					updateEvents={this.updateEvents}
 				/>
