@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/Gatherr/static/css/main.9b9ac1fe.chunk.css",
-    "main.js": "/Gatherr/static/js/main.720c6b74.chunk.js",
-    "main.js.map": "/Gatherr/static/js/main.720c6b74.chunk.js.map",
+    "main.css": "/Gatherr/static/css/main.1c813061.chunk.css",
+    "main.js": "/Gatherr/static/js/main.b847138b.chunk.js",
+    "main.js.map": "/Gatherr/static/js/main.b847138b.chunk.js.map",
     "runtime-main.js": "/Gatherr/static/js/runtime-main.955c4a56.js",
     "runtime-main.js.map": "/Gatherr/static/js/runtime-main.955c4a56.js.map",
     "static/js/2.d90121a6.chunk.js": "/Gatherr/static/js/2.d90121a6.chunk.js",
@@ -12,13 +12,13 @@
     "index.html": "/Gatherr/index.html",
     "service-worker.js": "/Gatherr/service-worker.js",
     "service-worker.js.map": "/Gatherr/service-worker.js.map",
-    "static/css/main.9b9ac1fe.chunk.css.map": "/Gatherr/static/css/main.9b9ac1fe.chunk.css.map",
+    "static/css/main.1c813061.chunk.css.map": "/Gatherr/static/css/main.1c813061.chunk.css.map",
     "static/js/2.d90121a6.chunk.js.LICENSE.txt": "/Gatherr/static/js/2.d90121a6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.955c4a56.js",
     "static/js/2.d90121a6.chunk.js",
-    "static/css/main.9b9ac1fe.chunk.css",
-    "static/js/main.720c6b74.chunk.js"
+    "static/css/main.1c813061.chunk.css",
+    "static/js/main.b847138b.chunk.js"
   ]
 }
