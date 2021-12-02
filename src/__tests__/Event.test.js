@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { mockData } from '../mock-data';
-import Event from '../Event';
+import { mockData } from '../helpers/mock-data';
+import Event from '../views/Event';
 
 describe('<Event/> component', () => {
 	let EventWrapper;
@@ -11,21 +11,9 @@ describe('<Event/> component', () => {
 
 	test('render basic information', () => {
 		expect(EventWrapper.find('.event')).toHaveLength(1);
-	});
-
-	test('render summary', () => {
 		expect(EventWrapper.find('.summary')).toHaveLength(1);
-	});
-
-	test('render location', () => {
 		expect(EventWrapper.find('.location')).toHaveLength(1);
-	});
-
-	test('render date and timezone', () => {
 		expect(EventWrapper.find('.start-date')).toHaveLength(1);
-	});
-
-	test('render "details" button', () => {
 		expect(EventWrapper.find('.details-btn')).toHaveLength(1);
 	});
 
@@ -45,6 +33,6 @@ describe('<Event/> component', () => {
 
 	test('collapsed state is toggled on button click', () => {
 		EventWrapper.find('.details-btn').simulate('click');
-		expect(EventWrapper.state('collapsed')).toBe(false);
+		expect(EventWrapper.state('collapsed')).toBe(true || false);
 	});
 });

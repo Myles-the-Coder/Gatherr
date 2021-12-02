@@ -1,11 +1,11 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import NumberOfEvents from '../NumberOfEvents';
+import NumberOfEvents from '../views/NumberOfEvents';
 
 describe('<NumberOfEvents/> component', () => {
 	let NumberOfEventsWrapper;
 	beforeAll(() => {
-		NumberOfEventsWrapper = shallow(<NumberOfEvents />);
+		NumberOfEventsWrapper = shallow(<NumberOfEvents numberOfEvents={32} updateEvents={() => {}}/>);
 	});
 
 	test('render input field', () => {
