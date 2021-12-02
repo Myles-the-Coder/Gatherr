@@ -44,7 +44,7 @@ ul {
 
 .EventList {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(350px, 2fr));
+	grid-template-columns: repeat(4, 1fr);
 }
 
 .event {
@@ -72,4 +72,22 @@ button {
 	padding: 10px;
 	border-radius: 5px;
 	cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .EventList {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 600px) and  (max-width: 1000px) {
+  .EventList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1000px) and  (max-width: 1500px) {
+  .EventList {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
