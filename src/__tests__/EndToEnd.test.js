@@ -10,7 +10,7 @@ describe('show/hide event details', () => {
 		browser = await puppeteer.launch();
 		page = await browser.newPage();
 		eventDetails = await page.$('.event .more-info');
-		await page.goto('http://localhost:8080/');
+		await page.goto('http://localhost:3000/');
 		await page.waitForSelector('.event');
 	});
 
@@ -32,14 +32,13 @@ describe('show/hide event details', () => {
 });
 
 // describe('filter events by city', () => {
-// 	let browser, page, citySearch, suggestionList, event;
+// 	let browser, page, suggestionList, event;
 // 	beforeAll(async () => {
 // 		browser = await puppeteer.launch();
 // 		page = await browser.newPage();
 // 		event = await page.$('.event');
-// 		citySearch = await page.$('.CitySearch');
 // 		suggestionList = await page.$('.suggestions li');
-// 		await page.goto('http://localhost:8080/');
+// 		await page.goto('http://localhost:3000/');
 // 		await page.waitForSelector('.city');
 // 		await page.waitForSelector('.event');
 // 		await page.waitForSelector('.suggestions li');
@@ -58,7 +57,6 @@ describe('show/hide event details', () => {
 
 // 	test('User can select a city from the suggested list', async () => {
 // 		await page.click(suggestionList).at(0);
-// 		expect(citySearch.state('query')).toBe('Berlin, Germany');
 // 		expect(event).toHaveLength(1);
 // 	});
 // });
