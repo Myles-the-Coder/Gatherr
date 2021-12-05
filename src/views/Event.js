@@ -16,6 +16,7 @@ class Event extends React.Component {
 		const { collapsed } = this.state;
 		const { summary, location, start, htmlLink, description } =
 			this.props.event;
+
 		return (
 			<div className='event'>
 				<h1 className='summary'>{summary}</h1>
@@ -23,7 +24,9 @@ class Event extends React.Component {
 				<p className='start-date'>{start.dateTime}</p>
 				{!collapsed ? (
 					<div className='more-info'>
-						<a href={htmlLink} target='_blank' rel='noreferrer' />
+						<a href={htmlLink} target='_blank'>
+							View Event in Calendar
+						</a>
 						<p className='description'>{description}</p>
 					</div>
 				) : (
