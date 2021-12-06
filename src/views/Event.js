@@ -24,7 +24,7 @@ class Event extends React.Component {
 				<p className='start-date'>{start.dateTime}</p>
 				{!collapsed ? (
 					<div className='more-info'>
-						<a href={htmlLink} target='_blank'>
+						<a href={htmlLink} target='_blank' rel='noreferrer'>
 							View Event in Calendar
 						</a>
 						<p className='description'>{description}</p>

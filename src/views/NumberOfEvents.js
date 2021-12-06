@@ -9,12 +9,13 @@ class NumberOfEvents extends Component {
 	}
 
 	handleChange = e => {
-		let eventNumber = Number(e.target.value);
+		const { updateEvents, currentLocation } = this.props;
+		let eventNumber = e.target.value;
 		if (eventNumber < 1 || eventNumber > 32) {
 			this.setState({ error: true });
 		} else {
 			this.setState({ error: false });
-			this.props.updateEvents(this.props.currentLocation, eventNumber);
+			updateEvents(currentLocation, eventNumber);
 		}
 	};
 
