@@ -3,11 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import * as atatus from 'atatus-spa';
 import dotenv from 'dotenv';
 import reportWebVitals from './reportWebVitals';
-atatus.config('777e286f57f54709bd1ddc4f40074754').install();
-
+import * as atatus from 'atatus-spa';
+atatus.config(process.env.ATATUS_KEY).install();
 dotenv.config();
 
 ReactDOM.render(
@@ -26,4 +25,5 @@ serviceWorkerRegistration.unregister();
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-atatus.notify(new Error('Test Atatus Setup'));
+atatus.notify(new Error('Test Atatus Setup '));
+atatus.notify(new Error('Test Atatus Setup 2'));
