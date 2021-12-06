@@ -18,30 +18,28 @@ class App extends React.Component {
 		};
 	}
 
-	componentDidMount() {
+	componentDidMount = async () => {
 		this.mounted = true;
-		getEvents().then(events => {
+		await getEvents().then(events => {
 			if (this.mounted) {
 				this.setState({ events, locations: extractLocations(events) });
 			}
 		});
-	}
+	};
 
-	componentWillUnmount() {
+	componentWillUnmount = () => {
 		this.mounted = false;
-	}
+	};
 
-	updateEvents = (location, eventCount) => {
-		getEvents().then(events => {
+	updateEvents = async (location, eventCount) => {
+		await getEvents().then(events => {
 			let locationEvents =
 				location === 'all'
 					? events
 					: events.filter(event => event.location === location);
 			this.setState({
-				events: locationEvents.slice(
-					0,
-					eventCount ? eventCount : this.state.numberOfEvents
-				),
+				events: locationEvents.slice(0, eventCount),
+				numberOfEvents: eventCount,
 			});
 		});
 	};

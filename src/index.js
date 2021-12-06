@@ -6,7 +6,7 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import dotenv from 'dotenv';
 import reportWebVitals from './reportWebVitals';
 import * as atatus from 'atatus-spa';
-atatus.config('af660d4cc6db4544a2dfe42d5349d462').install();
+atatus.config(process.env.ATATUS_KEY).install();
 dotenv.config();
 
 ReactDOM.render(

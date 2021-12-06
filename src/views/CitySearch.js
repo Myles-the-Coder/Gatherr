@@ -34,7 +34,7 @@ class CitySearch extends React.Component {
 					type='text'
 					className='city'
 					value={query}
-          style={{marginTop: '75px', width: '200px'}}
+					style={{ marginTop: '75px', width: '200px' }}
 					onChange={this.handleInputChange}
 					onFocus={() => this.setState({ showSuggestions: true })}
 				/>

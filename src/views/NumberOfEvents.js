@@ -4,23 +4,23 @@ class NumberOfEvents extends Component {
 	constructor() {
 		super();
 		this.state = {
-			eventNumber: 32,
-      error: false
+			error: false,
 		};
 	}
 
 	handleChange = e => {
 		let eventNumber = Number(e.target.value);
 		if (eventNumber < 1 || eventNumber > 32) {
-      this.setState({error: true})
-    } else {
-      this.setState({ eventNumber, error: false });
-      this.props.updateEvents(this.props.currentLocation, eventNumber);
-    }
+			this.setState({ error: true });
+		} else {
+			this.setState({ error: false });
+			this.props.updateEvents(this.props.currentLocation, eventNumber);
+		}
 	};
 
 	render() {
-    const {error} = this.state
+		const { error } = this.state;
+		const { numberOfEvents } = this.props;
 		return (
 			<div className='NumberOfEvents'>
 				<label htmlFor='event-number'>Number of events: </label>
@@ -28,12 +28,12 @@ class NumberOfEvents extends Component {
 					name='event-number'
 					type='number'
 					className='events-input'
-          min='1'
-          max='32'
-					value={this.state.eventNumber}
+					min='1'
+					max='32'
+					value={numberOfEvents}
 					onChange={this.handleChange}
 				/>
-        {error ? 'Please select a number between 1 and 32' : ''}
+				{error && 'Please select a number between 1 and 32'}
 			</div>
 		);
 	}
