@@ -1,20 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital@1&family=Roboto&display=swap');
+
 * {
 	box-sizing: border-box;
 }
 
 body {
 	margin: 0;
-	background: #c2e59c; /* fallback for old browsers */
-	background: -webkit-linear-gradient(
-		to right,
-		#64b3f4,
-		#c2e59c
-	); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(
-		to right,
-		#64b3f4,
-		#c2e59c
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #fceabb;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #f8b500, #fceabb);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #f8b500, #fceabb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  font-family: 'Nunito', sans-serif;
 }
 
 .App {
@@ -31,11 +27,28 @@ body {
 	top: 0;
 	left: 0;
 	margin: -30px 0;
-	width: 150px;
+	width: 175px;
 }
 
 ul {
-	list-style: none;
+  list-style: none;
+}
+
+.suggestions {
+  padding: 20px;
+  border-radius: 5px;
+background-color: rgba(255,255,255, 0.6);
+text-align: center;
+}
+
+.suggestions li {
+  cursor: pointer;
+  margin: 5px 0;
+  transition: transform 0.2s  ease;
+}
+
+.suggestions li:hover {
+  transform: scale(1.1)
 }
 
 .city-btn {
@@ -54,11 +67,13 @@ ul {
 	margin: 10px;
 }
 
+
 input {
 	padding: 10px;
 	margin: 5px;
 	border-radius: 5px;
 	border: none;
+  font-size: 1rem;
 }
 
 input:focus {
@@ -72,22 +87,28 @@ button {
 	padding: 10px;
 	border-radius: 5px;
 	cursor: pointer;
+  background-color: #fcae1e;
+  font-size: 1rem;
+}
+
+button:hover {
+  filter: brightness(110%);
 }
 
 @media screen and (max-width: 600px) {
-  .EventList {
-    grid-template-columns: 1fr;
-  }
+	.EventList {
+		grid-template-columns: 1fr;
+	}
 }
 
-@media screen and (min-width: 600px) and  (max-width: 1000px) {
-  .EventList {
-    grid-template-columns: repeat(2, 1fr);
-  }
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+	.EventList {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
-@media screen and (min-width: 1000px) and  (max-width: 1500px) {
-  .EventList {
-    grid-template-columns: repeat(3, 1fr);
-  }
+@media screen and (min-width: 1000px) and (max-width: 1500px) {
+	.EventList {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
