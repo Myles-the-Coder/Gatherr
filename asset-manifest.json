@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/Gatherr/static/css/main.90122a83.chunk.css",
-    "main.js": "/Gatherr/static/js/main.f6406289.chunk.js",
-    "main.js.map": "/Gatherr/static/js/main.f6406289.chunk.js.map",
+    "main.js": "/Gatherr/static/js/main.0b55c30f.chunk.js",
+    "main.js.map": "/Gatherr/static/js/main.0b55c30f.chunk.js.map",
     "runtime-main.js": "/Gatherr/static/js/runtime-main.b62fdcc0.js",
     "runtime-main.js.map": "/Gatherr/static/js/runtime-main.b62fdcc0.js.map",
-    "static/js/2.dd8addfe.chunk.js": "/Gatherr/static/js/2.dd8addfe.chunk.js",
-    "static/js/2.dd8addfe.chunk.js.map": "/Gatherr/static/js/2.dd8addfe.chunk.js.map",
+    "static/js/2.97421a79.chunk.js": "/Gatherr/static/js/2.97421a79.chunk.js",
+    "static/js/2.97421a79.chunk.js.map": "/Gatherr/static/js/2.97421a79.chunk.js.map",
     "static/js/3.bd7051bb.chunk.js": "/Gatherr/static/js/3.bd7051bb.chunk.js",
     "static/js/3.bd7051bb.chunk.js.map": "/Gatherr/static/js/3.bd7051bb.chunk.js.map",
     "index.html": "/Gatherr/index.html",
     "service-worker.js": "/Gatherr/service-worker.js",
     "service-worker.js.map": "/Gatherr/service-worker.js.map",
     "static/css/main.90122a83.chunk.css.map": "/Gatherr/static/css/main.90122a83.chunk.css.map",
-    "static/js/2.dd8addfe.chunk.js.LICENSE.txt": "/Gatherr/static/js/2.dd8addfe.chunk.js.LICENSE.txt"
+    "static/js/2.97421a79.chunk.js.LICENSE.txt": "/Gatherr/static/js/2.97421a79.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b62fdcc0.js",
-    "static/js/2.dd8addfe.chunk.js",
+    "static/js/2.97421a79.chunk.js",
     "static/css/main.90122a83.chunk.css",
-    "static/js/main.f6406289.chunk.js"
+    "static/js/main.0b55c30f.chunk.js"
   ]
 }
