@@ -18,42 +18,45 @@ class App extends React.Component {
 		};
 	}
 
-	componentDidMount = async () => {
+	componentDidMount = () => {
 		this.mounted = true;
-		await getEvents().then(events => {
+		getEvents().then(events => {
 			if (this.mounted) {
 				this.setState({ events, locations: extractLocations(events) });
 			}
 		});
 	};
 
-	componentWillUnmount = () => {
-		this.mounted = false;
-	};
+	componentWillUnmount = () => (this.mounted = false);
 
-	updateEvents = async (location, eventCount) => {
-		await getEvents().then(events => {
+	updateEvents = (location, eventNumber) => {
+		getEvents().then(events => {
 			let locationEvents =
 				location === 'all'
 					? events
 					: events.filter(event => event.location === location);
 			this.setState({
-				events: locationEvents.slice(0, eventCount),
-				numberOfEvents: eventCount,
+				events: locationEvents.slice(0, eventNumber),
 			});
+			console.log(this.state.events);
 		});
 	};
 
+  updateEventNumber = eventNumber => {
+    const {currentLocation} = this.state
+    this.setState({numberOfEvents: eventNumber})
+    this.updateEvents(currentLocation, eventNumber)
+  }
+
 	render() {
-		const { events, locations, numberOfEvents, currentLocation } = this.state;
+		const { events, locations, numberOfEvents } = this.state;
 		return (
 			<div className='App'>
 				<img src={Logo} alt='Gatherr-logo' className='logo' />
 				<CitySearch locations={locations} updateEvents={this.updateEvents} />
 				<NumberOfEvents
-					currentLocation={currentLocation}
 					numberOfEvents={numberOfEvents}
-					updateEvents={this.updateEvents}
+					updateEventNumber={this.updateEventNumber}
 				/>
 				<EventList events={events} />
 			</div>

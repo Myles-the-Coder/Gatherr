@@ -11,8 +11,9 @@ class CitySearch extends React.Component {
 	}
 
 	handleInputChange = e => {
+		const { locations } = this.props;
 		const value = e.target.value;
-		const suggestions = this.props.locations.filter(location => {
+		const suggestions = locations.filter(location => {
 			return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
 		});
 		this.setState({ query: value, suggestions });

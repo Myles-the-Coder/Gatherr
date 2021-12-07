@@ -22,15 +22,13 @@ class Event extends React.Component {
 				<h1 className='summary'>{summary}</h1>
 				<p className='location'>{location}</p>
 				<p className='start-date'>{start.dateTime}</p>
-				{!collapsed ? (
+				{!collapsed && (
 					<div className='more-info'>
 						<a href={htmlLink} target='_blank' rel='noreferrer'>
 							View Event in Calendar
 						</a>
 						<p className='description'>{description}</p>
 					</div>
-				) : (
-					<></>
 				)}
 				<button onClick={this.setCollapsed} className='details-btn'>
 					{collapsed ? 'More Details' : 'Hide Details'}
