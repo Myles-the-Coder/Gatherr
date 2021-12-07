@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 class NumberOfEvents extends Component {
 	constructor() {
 		super();
-		this.state = {
-			error: false,
-		};
+		this.state = { error: false };
 	}
 
 	handleChange = e => {
@@ -27,8 +25,8 @@ class NumberOfEvents extends Component {
 					name='event-number'
 					type='number'
 					className='events-input'
-          min='1'
-          max='32'
+					min='1'
+					max='32'
 					value={numberOfEvents}
 					onChange={this.handleChange}
 				/>

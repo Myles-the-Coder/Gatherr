@@ -29,20 +29,22 @@ class App extends React.Component {
 
 	componentWillUnmount = () => (this.mounted = false);
 
-	updateEvents = (location, eventNumber) => {
+	updateEvents = location => {
 		getEvents().then(events => {
 			let locationEvents =
 				location === 'all'
 					? events
 					: events.filter(event => event.location === location);
-			this.setState({ events: locationEvents.slice(0, eventNumber) });
+			this.setState({
+				events: locationEvents.slice(0, this.state.numberOfEvents),
+			});
 		});
 	};
 
 	updateEventNumber = eventNumber => {
 		const { currentLocation } = this.state;
 		this.setState({ numberOfEvents: eventNumber });
-		this.updateEvents(currentLocation, eventNumber);
+		this.updateEvents(currentLocation);
 	};
 
 	render() {
