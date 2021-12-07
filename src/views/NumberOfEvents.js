@@ -9,9 +9,11 @@ class NumberOfEvents extends Component {
 	handleChange = e => {
 		const { updateEventNumber } = this.props;
 		let eventNumber = e.target.value;
-		eventNumber < 1 || eventNumber > 32
-			? this.setState({ error: true })
-			: this.setState({ error: false });
+		if (eventNumber < 0 || eventNumber > 32) {
+			this.setState({ error: true });
+			return;
+		}
+		this.setState({ error: false });
 		updateEventNumber(eventNumber);
 	};
 
@@ -25,8 +27,6 @@ class NumberOfEvents extends Component {
 					name='event-number'
 					type='number'
 					className='events-input'
-					min='1'
-					max='32'
 					value={numberOfEvents}
 					onChange={this.handleChange}
 				/>

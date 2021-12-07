@@ -21,9 +21,8 @@ class App extends React.Component {
 	componentDidMount = () => {
 		this.mounted = true;
 		getEvents().then(events => {
-			if (this.mounted) {
+			this.mounted &&
 				this.setState({ events, locations: extractLocations(events) });
-			}
 		});
 	};
 
