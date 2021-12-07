@@ -55,7 +55,7 @@ class App extends React.Component {
 		return (
 			<div className='App'>
 				<img src={Logo} alt='Gatherr-logo' className='logo' />
-				<CitySearch locations={locations} updateEvents={this.updateEvents} />
+				<CitySearch locations={locations} updateEvents={this.updateEvents} numberOfEvents={numberOfEvents}/>
 				<NumberOfEvents
 					numberOfEvents={numberOfEvents}
 					updateEventNumber={this.updateEventNumber}

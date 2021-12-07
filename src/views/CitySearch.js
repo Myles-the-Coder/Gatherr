@@ -20,11 +20,12 @@ class CitySearch extends React.Component {
 	};
 
 	handleItemClicked = suggestion => {
+		const { updateEvents, numberOfEvents } = this.props;
 		this.setState({
 			query: suggestion,
 			showSuggestions: false,
 		});
-		this.props.updateEvents(suggestion);
+		updateEvents(suggestion.slice(0, numberOfEvents));
 	};
 
 	render() {
