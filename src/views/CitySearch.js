@@ -25,7 +25,7 @@ class CitySearch extends React.Component {
 			query: suggestion,
 			showSuggestions: false,
 		});
-		updateEvents(suggestion.slice(0, numberOfEvents));
+		updateEvents(suggestion, numberOfEvents);
 	};
 
 	render() {

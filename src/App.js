@@ -33,14 +33,9 @@ class App extends React.Component {
 		getEvents().then(events => {
 			let locationEvents =
 				location === 'all'
-					? events.slice(0, eventNumber)
-					: events
-							.filter(event => event.location === location)
-							.slice(0, eventNumber);
-			this.setState({
-				events: locationEvents.slice(0, eventNumber),
-			});
-			console.log(this.state.events);
+					? events
+					: events.filter(event => event.location === location);
+			this.setState({ events: locationEvents.slice(0, eventNumber) });
 		});
 	};
 
@@ -55,7 +50,11 @@ class App extends React.Component {
 		return (
 			<div className='App'>
 				<img src={Logo} alt='Gatherr-logo' className='logo' />
-				<CitySearch locations={locations} updateEvents={this.updateEvents} numberOfEvents={numberOfEvents}/>
+				<CitySearch
+					locations={locations}
+					updateEvents={this.updateEvents}
+					numberOfEvents={numberOfEvents}
+				/>
 				<NumberOfEvents
 					numberOfEvents={numberOfEvents}
 					updateEventNumber={this.updateEventNumber}

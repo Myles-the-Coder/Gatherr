@@ -2,9 +2,11 @@ import { mockData } from './mock-data';
 import axios from 'axios';
 import NProgress from 'nprogress';
 
+const AWSUrl = 'https://n1dndio4ce.execute-api.us-east-2.amazonaws.com/dev/';
+
 export const extractLocations = events => {
-	var extractLocations = events.map(event => event.location);
-	var locations = [...new Set(extractLocations)];
+	let extractLocations = events.map(event => event.location);
+	let locations = [...new Set(extractLocations)];
 	return locations;
 };
 
@@ -19,8 +21,7 @@ const checkToken = async accessToken => {
 
 const getToken = async code => {
 	const encodeCode = encodeURIComponent(code);
-	const getTokenLink =
-		'https://n1dndio4ce.execute-api.us-east-2.amazonaws.com/dev/api/token';
+	const getTokenLink = `${AWSUrl}api/token`;
 	const { access_token } = await fetch(`${getTokenLink}/${encodeCode}`)
 		.then(res => res.json())
 		.catch(err => err);
@@ -51,8 +52,7 @@ export const getEvents = async () => {
 	}
 
 	const token = await getAccessToken();
-	const getCalendarEvents =
-		'https://n1dndio4ce.execute-api.us-east-2.amazonaws.com/dev/api/get-events';
+	const getCalendarEvents = `${AWSUrl}api/get-events`;
 
 	if (token) {
 		removeQuery();
