@@ -33,8 +33,10 @@ class App extends React.Component {
 		getEvents().then(events => {
 			let locationEvents =
 				location === 'all'
-					? events
-					: events.filter(event => event.location === location);
+					? events.slice(0, eventNumber)
+					: events
+							.filter(event => event.location === location)
+							.slice(0, eventNumber);
 			this.setState({
 				events: locationEvents.slice(0, eventNumber),
 			});
@@ -42,11 +44,11 @@ class App extends React.Component {
 		});
 	};
 
-  updateEventNumber = eventNumber => {
-    const {currentLocation} = this.state
-    this.setState({numberOfEvents: eventNumber})
-    this.updateEvents(currentLocation, eventNumber)
-  }
+	updateEventNumber = eventNumber => {
+		const { currentLocation } = this.state;
+		this.setState({ numberOfEvents: eventNumber });
+		this.updateEvents(currentLocation, eventNumber);
+	};
 
 	render() {
 		const { events, locations, numberOfEvents } = this.state;
