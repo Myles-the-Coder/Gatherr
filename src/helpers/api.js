@@ -58,10 +58,10 @@ export const getEvents = async () => {
 	}
 
 	const token = await getAccessToken();
-	const getCalendarEvents = `${AWSUrl}api/get-events`;
-
+  
 	if (token) {
-		removeQuery();
+    removeQuery();
+    const getCalendarEvents = `${AWSUrl}api/get-events`;
 		const url = `${getCalendarEvents}/${token}`;
 		const result = await axios.get(url);
 		let { events } = result.data;
