@@ -2,15 +2,43 @@
 
 * {
 	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 body {
-	margin: 0;
-  background: #fceabb;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #f8b500, #fceabb);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #f8b500, #fceabb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
-  font-family: 'Nunito', sans-serif;
+	background: #fceabb; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to left,
+		#f8b500,
+		#fceabb
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to left,
+		#f8b500,
+		#fceabb
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	font-family: 'Nunito', sans-serif;
 }
 
 .App {
@@ -20,6 +48,7 @@ body {
 	justify-content: center;
 	text-align: center;
 	position: relative;
+	width: 100%;
 }
 
 .logo {
@@ -31,24 +60,24 @@ body {
 }
 
 ul {
-  list-style: none;
+	list-style: none;
 }
 
 .suggestions {
-  padding: 20px;
-  border-radius: 5px;
-background-color: rgba(255,255,255, 0.6);
-text-align: center;
+	padding: 20px;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.6);
+	text-align: center;
 }
 
 .suggestions li {
-  cursor: pointer;
-  margin: 5px 0;
-  transition: transform 0.2s  ease;
+	cursor: pointer;
+	margin: 5px 0;
+	transition: transform 0.2s ease;
 }
 
 .suggestions li:hover {
-  transform: scale(1.1)
+	transform: scale(1.1);
 }
 
 .city-btn {
@@ -57,23 +86,24 @@ text-align: center;
 
 .EventList {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  width: 100%;
+  justify-content: center;
 }
 
 .event {
 	background-color: whitesmoke;
 	border-radius: 5px;
-	padding: 30px;
-	margin: 10px;
+	padding: 50px;
+  margin: 10px;
 }
-
 
 input {
 	padding: 10px;
 	margin: 5px;
 	border-radius: 5px;
 	border: none;
-  font-size: 1rem;
+	font-size: 1rem;
 }
 
 input:focus {
@@ -87,15 +117,16 @@ button {
 	padding: 10px;
 	border-radius: 5px;
 	cursor: pointer;
-  background-color: #fcae1e;
-  font-size: 1rem;
+	background-color: #fcae1e;
+	font-size: 1.2rem;
+	color: whitesmoke;
 }
 
 button:hover {
-  filter: brightness(110%);
+	filter: brightness(110%);
 }
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
 	.EventList {
 		grid-template-columns: 1fr;
 	}
@@ -111,4 +142,4 @@ button:hover {
 	.EventList {
 		grid-template-columns: repeat(3, 1fr);
 	}
-}
+} */
