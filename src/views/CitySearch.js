@@ -45,7 +45,8 @@ class CitySearch extends React.Component {
 					className='city'
 					value={query}
 					style={{ marginTop: '90px', width: '200px' }}
-					onChange={this.handleInputChange}
+					placeholder='Search event by city...'
+          onChange={this.handleInputChange}
 					onFocus={() => this.setState({ showSuggestions: true })}
 				/>
 				{infoText && <InfoAlert text={infoText} />}

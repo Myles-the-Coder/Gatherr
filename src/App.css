@@ -98,6 +98,10 @@ ul {
   margin: 10px;
 }
 
+.event * {
+  margin: 10px 0;
+}
+
 input {
 	padding: 10px;
 	margin: 5px;
@@ -126,20 +130,6 @@ button:hover {
 	filter: brightness(110%);
 }
 
-/* @media screen and (max-width: 600px) {
-	.EventList {
-		grid-template-columns: 1fr;
-	}
+.Alert {
+  margin: 10px 0;
 }
-
-@media screen and (min-width: 600px) and (max-width: 1000px) {
-	.EventList {
-		grid-template-columns: repeat(2, 1fr);
-	}
-}
-
-@media screen and (min-width: 1000px) and (max-width: 1500px) {
-	.EventList {
-		grid-template-columns: repeat(3, 1fr);
-	}
-} */

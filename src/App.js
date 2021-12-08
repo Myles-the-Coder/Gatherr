@@ -6,6 +6,7 @@ import NumberOfEvents from './views/NumberOfEvents';
 import CitySearch from './views/CitySearch';
 import { extractLocations, getEvents } from './helpers/api';
 import Logo from './Gatherr-logo.png';
+import { InfoAlert } from './views/Alert';
 
 class App extends React.Component {
 	constructor() {
@@ -51,6 +52,7 @@ class App extends React.Component {
 		return (
 			<div className='App'>
 				<img src={Logo} alt='Gatherr-logo' className='logo' />
+        {!navigator.onLine && <InfoAlert text='Offline Mode: Data may not be up to date' />}
 				<CitySearch
 					locations={locations}
 					updateEvents={this.updateEvents}
