@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Gatherr/static/css/main.43c19ed5.chunk.css",
-    "main.js": "/Gatherr/static/js/main.16f0271c.chunk.js",
-    "main.js.map": "/Gatherr/static/js/main.16f0271c.chunk.js.map",
+    "main.js": "/Gatherr/static/js/main.9e8db798.chunk.js",
+    "main.js.map": "/Gatherr/static/js/main.9e8db798.chunk.js.map",
     "runtime-main.js": "/Gatherr/static/js/runtime-main.b62fdcc0.js",
     "runtime-main.js.map": "/Gatherr/static/js/runtime-main.b62fdcc0.js.map",
     "static/js/2.a566b83f.chunk.js": "/Gatherr/static/js/2.a566b83f.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.b62fdcc0.js",
     "static/js/2.a566b83f.chunk.js",
     "static/css/main.43c19ed5.chunk.css",
-    "static/js/main.16f0271c.chunk.js"
+    "static/js/main.9e8db798.chunk.js"
   ]
 }
