@@ -52,7 +52,6 @@ class App extends React.Component {
 		return (
 			<div className='App'>
 				<img src={Logo} alt='Gatherr-logo' className='logo' />
-        {!navigator.onLine && <InfoAlert text='Offline Mode: Data may not be up to date' />}
 				<CitySearch
 					locations={locations}
 					updateEvents={this.updateEvents}
@@ -62,6 +61,7 @@ class App extends React.Component {
 					numberOfEvents={numberOfEvents}
 					updateEventNumber={this.updateEventNumber}
 				/>
+        {!navigator.onLine && <InfoAlert text='Offline Mode: Data may not be up to date' />}
 				<EventList events={events} />
 			</div>
 		);
