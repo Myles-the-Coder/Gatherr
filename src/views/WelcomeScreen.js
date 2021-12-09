@@ -10,10 +10,10 @@ function WelcomeScreen(props) {
 					developers
 				</h4>
 				<div className='button_cont' align='center'>
-					<div class='google-btn'>
-						<div class='google-icon-wrapper'>
+					<div className='google-btn'>
+						<div className='google-icon-wrapper'>
 							<img
-								class='google-icon'
+								className='google-icon'
 								src='https://i0.wp.com/nanophorm.com/wp-content/uploads/2018/04/google-logo-icon-PNG-Transparent-Background.png?fit=1000%2C1000&ssl=1'
 								alt='Google sign-in'
 							/>
@@ -23,12 +23,13 @@ function WelcomeScreen(props) {
 								props.getAccessToken();
 							}}
 							rel='nofollow noopener'
-							class='btn-text'>
+							className='btn-text'>
 							<b>Sign in with google</b>
 						</button>
 					</div>
 				</div>
 				<a
+          className='policy-link'
 					href='https://myles-the-coder.github.io/Gatherr/privacy.html'
 					rel='nofollow noopener'>
 					Privacy policy
