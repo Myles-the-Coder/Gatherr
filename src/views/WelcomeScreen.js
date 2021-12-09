@@ -1,14 +1,15 @@
 import React from 'react';
 import '../styles/WelcomeScreen.css'
+import logo from '../Gatherr-logo.png'
 
 function WelcomeScreen(props) {
 		return props.showWelcomeScreen ? (
 			<div className='WelcomeScreen'>
-				<h1>Welcome to the Gatherr</h1>
-				<h4>
+        <img src={logo} alt="Gatherr logo" className='WS-logo'/>
+				<h3>
 					Log in to see upcoming events around the world for full-stack
 					developers
-				</h4>
+				</h3>
 				<div className='button_cont' align='center'>
 					<div className='google-btn'>
 						<div className='google-icon-wrapper'>
@@ -30,7 +31,7 @@ function WelcomeScreen(props) {
 				</div>
 				<a
           className='policy-link'
-					href='https://myles-the-coder.github.io/Gatherr/privacy.html'
+					href='/Gatherr/privacy.html'
 					rel='nofollow noopener'>
 					Privacy policy
 				</a>

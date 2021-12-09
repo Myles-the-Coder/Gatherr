@@ -17,6 +17,14 @@
   flex-direction: column;
 }
 
+.WS-logo {
+  margin: 20px;
+  border-radius: 5px;
+  width: 250px;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
 .login-button {
 	color: #494949;
 	text-transform: uppercase;
@@ -70,5 +78,5 @@
 
 .policy-link {
   text-decoration: none;
-
+  font-size: 1.1rem;
 }
