@@ -63,16 +63,9 @@ class App extends React.Component {
 	render() {
 		const { events, locations, numberOfEvents, showWelcomeScreen } = this.state;
 
-		if (showWelcomeScreen !== undefined) {
+		if (showWelcomeScreen === undefined) {
 			return (
-				<div className='App'>
-					<WelcomeScreen
-						showWelcomeScreen={showWelcomeScreen}
-						getAccessToken={() => {
-							getAccessToken();
-						}}
-					/>
-				</div>
+				<div className='App'/>
 			);
 		}
 
@@ -92,6 +85,12 @@ class App extends React.Component {
 					<InfoAlert text='Offline Mode: Data may not be up to date' />
 				)}
 				<EventList events={events} />
+        <WelcomeScreen
+						showWelcomeScreen={showWelcomeScreen}
+						getAccessToken={() => {
+							getAccessToken();
+						}}
+					/>
 			</div>
 		);
 	}
