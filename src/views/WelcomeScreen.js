@@ -31,7 +31,7 @@ function WelcomeScreen(props) {
 				</div>
 				<a
           className='policy-link'
-					href='/Gatherr/privacy.html'
+					href='https://myles-the-coder.github.io/Gatherr/privacy.html"'
 					rel='nofollow noopener'>
 					Privacy policy
 				</a>
