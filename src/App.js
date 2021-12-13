@@ -38,12 +38,17 @@ class App extends React.Component {
 
 	componentDidMount = async () => {
 		this.mounted = true;
-		const accessToken = localStorage.getItem('access_token');
-		const isTokenValid = (await checkToken(accessToken)).error ? false : true;
-		const searchParams = new URLSearchParams(window.location.search);
-		const code = searchParams.get('code');
-		this.setState({ showWelcomeScreen: !(code || isTokenValid) });
-		if ((code || isTokenValid) && this.mounted) {
+		// const accessToken = localStorage.getItem('access_token');
+		// const isTokenValid = (await checkToken(accessToken)).error ? false : true;
+		// const searchParams = new URLSearchParams(window.location.search);
+		// const code = searchParams.get('code');
+		// this.setState({ showWelcomeScreen: !(code || isTokenValid) });
+		// if ((code || isTokenValid) && this.mounted) {
+		// 	getEvents().then(events => {
+		// 		this.setState({ events, locations: extractLocations(events) });
+		// 	});
+		// }
+    if (this.mounted) {
 			getEvents().then(events => {
 				this.setState({ events, locations: extractLocations(events) });
 			});
@@ -83,9 +88,9 @@ class App extends React.Component {
 	render() {
 		const { events, locations, numberOfEvents, showWelcomeScreen } = this.state;
 
-		if (showWelcomeScreen === undefined) {
-			return <div className='App' />;
-		}
+		// if (showWelcomeScreen === undefined) {
+		// 	return <div className='App' />;
+		// }
 
 		return (
 			<div className='App'>
@@ -127,12 +132,12 @@ class App extends React.Component {
 					</ResponsiveContainer>
 				</div>
 				<EventList events={events} />
-				<WelcomeScreen
+				{/* <WelcomeScreen
 					showWelcomeScreen={showWelcomeScreen}
 					getAccessToken={() => {
 						getAccessToken();
 					}}
-				/>
+				/> */}
 			</div>
 		);
 	}
