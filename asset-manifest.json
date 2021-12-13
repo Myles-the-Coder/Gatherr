@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Gatherr/static/css/main.786bb917.chunk.css",
+    "main.css": "/Gatherr/static/css/main.ca00f6dd.chunk.css",
     "main.js": "/Gatherr/static/js/main.fe5c636f.chunk.js",
     "main.js.map": "/Gatherr/static/js/main.fe5c636f.chunk.js.map",
     "runtime-main.js": "/Gatherr/static/js/runtime-main.718d0e42.js",
@@ -12,13 +12,13 @@
     "index.html": "/Gatherr/index.html",
     "service-worker.js": "/Gatherr/service-worker.js",
     "service-worker.js.map": "/Gatherr/service-worker.js.map",
-    "static/css/main.786bb917.chunk.css.map": "/Gatherr/static/css/main.786bb917.chunk.css.map",
+    "static/css/main.ca00f6dd.chunk.css.map": "/Gatherr/static/css/main.ca00f6dd.chunk.css.map",
     "static/js/2.aab09d17.chunk.js.LICENSE.txt": "/Gatherr/static/js/2.aab09d17.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.718d0e42.js",
     "static/js/2.aab09d17.chunk.js",
-    "static/css/main.786bb917.chunk.css",
+    "static/css/main.ca00f6dd.chunk.css",
     "static/js/main.fe5c636f.chunk.js"
   ]
 }
