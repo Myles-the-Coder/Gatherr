@@ -13,7 +13,7 @@ import {
 import Logo from './Gatherr-logo.png';
 import { InfoAlert } from './components/Alert';
 import WelcomeScreen from './components/WelcomeScreen';
-import EventGenre from './components/Event';
+import EventGenre from './components/EventGenre';
 import {
 	ResponsiveContainer,
 	ScatterChart,
@@ -104,7 +104,7 @@ class App extends React.Component {
 				)}
 				<h4>Events in each city</h4>
 				<div className='data-vis-wrapper'>
-					{/* <EventGenre events={events} /> */}
+					<EventGenre events={events}/>
 					<ResponsiveContainer height={400}>
 						<ScatterChart
 							margin={{
@@ -114,12 +114,12 @@ class App extends React.Component {
 								left: 20,
 							}}>
 							<CartesianGrid />
-							<XAxis type='category' dataKey='City' name='City' />
+							<XAxis type='category' dataKey='city' name='city' />
 							<YAxis
-								type='number'
-								dataKey='Number'
-								name='Number of Events'
 								allowDecimals={false}
+								type='number'
+								dataKey='number'
+								name='number of events'
 							/>
 							<Tooltip cursor={{ strokeDasharray: '3 3' }} />
 							<Scatter data={this.getData()} fill='#8884d8' />
