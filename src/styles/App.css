@@ -48,7 +48,6 @@ body {
 	justify-content: center;
 	text-align: center;
 	position: relative;
-	width: 100%;
 }
 
 .logo {
@@ -84,7 +83,7 @@ ul {
 	cursor: pointer;
 }
 
-.EventList, .data-vis-wrapper {
+.EventList {
 	display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   width: 100%;
@@ -92,8 +91,14 @@ ul {
 }
 
 .data-vis-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 10px;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 5px;
+  margin: 10px;
 }
 
 .event {
@@ -224,4 +229,10 @@ button:hover {
 
 .btn-text:hover {
   filter: none;
+}
+
+@media screen and (max-width: 800px) {
+  .data-vis-wrapper {
+    flex-direction: column;
+  }
 }
