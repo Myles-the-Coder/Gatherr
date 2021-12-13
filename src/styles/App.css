@@ -221,3 +221,8 @@ button:hover {
   filter: none;
 }
 
+.data-vis-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
