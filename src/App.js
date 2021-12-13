@@ -1,9 +1,9 @@
 import React from 'react';
 import './styles/App.css';
 import './styles/nprogress.css';
-import EventList from './views/EventList';
-import NumberOfEvents from './views/NumberOfEvents';
-import CitySearch from './views/CitySearch';
+import EventList from './components/EventList';
+import NumberOfEvents from './components/NumberOfEvents';
+import CitySearch from './components/CitySearch';
 import {
 	extractLocations,
 	getAccessToken,
@@ -11,8 +11,18 @@ import {
 	checkToken,
 } from './helpers/api';
 import Logo from './Gatherr-logo.png';
-import { InfoAlert } from './views/Alert';
-import WelcomeScreen from './views/WelcomeScreen';
+import { InfoAlert } from './components/Alert';
+import WelcomeScreen from './components/WelcomeScreen';
+import EventGenre from './components/Event';
+import {
+  ResponsiveContainer,
+	ScatterChart,
+	Scatter,
+	XAxis,
+	YAxis,
+	CartesianGrid,
+	Tooltip,
+} from 'recharts';
 
 class App extends React.Component {
 	constructor() {
@@ -26,7 +36,7 @@ class App extends React.Component {
 		};
 	}
 
-	componentDidMount =  async () => {
+	componentDidMount = async () => {
 		this.mounted = true;
 		const accessToken = localStorage.getItem('access_token');
 		const isTokenValid = (await checkToken(accessToken)).error ? false : true;
@@ -41,6 +51,16 @@ class App extends React.Component {
 	};
 
 	componentWillUnmount = () => (this.mounted = false);
+
+	getData = () => {
+		const { locations, events } = this.state;
+		const data = locations.map(location => {
+			const number = events.filter(event => event.location === location).length;
+			const city = location.split(', ').shift();
+			return { city, number };
+		});
+		return data;
+	};
 
 	updateEvents = location => {
 		getEvents().then(events => {
@@ -64,9 +84,7 @@ class App extends React.Component {
 		const { events, locations, numberOfEvents, showWelcomeScreen } = this.state;
 
 		if (showWelcomeScreen === undefined) {
-			return (
-				<div className='App'/>
-			);
+			return <div className='App' />;
 		}
 
 		return (
@@ -84,13 +102,33 @@ class App extends React.Component {
 				{!navigator.onLine && (
 					<InfoAlert text='Offline Mode: Data may not be up to date' />
 				)}
+				<h4>Events in each city</h4>
+        <div className='data-vis-wrapper'>
+
+        <EventGenre events={events}/>
+        <ResponsiveContainer height={400}>
+				<ScatterChart
+					margin={{
+						top: 20,
+						right: 20,
+						bottom: 20,
+						left: 20,
+					}}>
+					<CartesianGrid />
+					<XAxis type='category' dataKey='City' name='City'/>
+					<YAxis type='number' dataKey='Number' name='Number of Events' allowDecimals={false}/>
+					<Tooltip cursor={{ strokeDasharray: '3 3' }} />
+					<Scatter data={this.getData()} fill='#8884d8' />
+				</ScatterChart>
+        </ResponsiveContainer>
+        </div>
 				<EventList events={events} />
-        <WelcomeScreen
-						showWelcomeScreen={showWelcomeScreen}
-						getAccessToken={() => {
-							getAccessToken();
-						}}
-					/>
+				<WelcomeScreen
+					showWelcomeScreen={showWelcomeScreen}
+					getAccessToken={() => {
+						getAccessToken();
+					}}
+				/>
 			</div>
 		);
 	}
