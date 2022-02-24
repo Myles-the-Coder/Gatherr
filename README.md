@@ -11,7 +11,7 @@ Initial 1.0 Version Duration: November 2021 - December 2021
  
 ## 🧐About
 
-This project was built for the purpose of gaining more expiernce with using AWS Serverless and building PWAs. 
+This project was built for the purpose of gaining more experience with using AWS Serverless and building PWAs. 
 
 ## 💡Features
 
@@ -22,6 +22,12 @@ This project was built for the purpose of gaining more expiernce with using AWS 
 5. Access to Google Calendar API data
 
 ## ⛏️Built with
+- HTML, CSS, JavaScript
+- React
+- AWS Lambda
+- Serverless
+- Google Calendar API, OAuth2
+- Recharts
 
 "dependencies": 
 
@@ -60,68 +66,35 @@ This project was built for the purpose of gaining more expiernce with using AWS 
 
 These instructions will help you to setup your own copy of Gatherr on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-## 📚Prerequisite
-
-#### //Necessary
-
-- AWS
-- Node & NPM
-- Expo / Expo Go
-- Firebase
-
-#### //Optional
-
-- Android Studio (Android only)
-  - If you choose to use Android Studio for device emulation, please refer to the [Android Studio Docs](https://developer.android.com/studio/install) to ensure proper setup for use with Expo
-- Xcode (IOS only)
-
 ## 🧰Installation
 
 1. Clone this repo
-2. Install all the dependencies listed above
+2. Install all the dependencies listed above by running ```npm install``` in your terminal
 3. Tweak code depending on local settings
-4. Run ```npm start``` or ```expo start``` in your terminal to start local server
-5. Scan the QR code provided by Expo in the terminal or development tools to load the project on a physical device. Alternatively, launch the project using an Android Studio or Xcode.
-
-
-## 🚀Firebase Setup (As of Jan 2022)
-
-1. Create a new project through the Firebase console
-2. Click on Firebase Database on the lefthand side of the page, enter production mode, and select the closest Cloud Firestore location
-3. Click on the cog icon next to 'Project Overview' and scroll down to the 'Your Apps' section at the bottom of the page. 
-4. Click on the 'web' icon and enter the project name on the next page.
-5. Add the Firebase congif settings to either your `Chat.js` file or a seperate file where it can be imported
-   - Do NOT push these settings to GitHub. Make use of `react-native-dotenv` or a similar package to hide these in a `.env` file.
-6. Enable anonymous signin within the 'Authentication' menu
-7. Enable storge in the 'Storage' menu. This is used to store image files set as chat messages.
-
-For further information, please refer to the [Firebase Docs](https://firebase.google.com/docs/)
+4. Run ```npm start``` in your terminal to start local server
 
 ## 📝Todo
 
--Add more functionality to chat (e.g. recording and sending voice messages)
 -Adjust styling where necessary
--Improve speed of sending/recieving images between users
+-Improve app performance
 
 ## 📈Future Plans
 
--Add additional signin options (e.g. email/password, Google, etc.)
+-Add additional signin options
 
 ## 🎈Usage
 
-Gatherr 
+Gatherr is used to view developer events from all over the world.
 
 ## ✍️Authors
 @Myles-the-Coder - Initial Work
 
 ## 🧬Resources
 
-- AWS Docs
+- AWS docs
 - Google Calendar for Developers
-- Firebase Docs
-- GiftedChat GitHub repo
-- Expo Camera Docs
-- Expo Location Docs
+- Recharts docs
+- Serverless docs
 
 ## 🎉Acknowledgement
 CareerFoundry
