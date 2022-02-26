@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/App.css';
+import './styles/App.scss';
 import './styles/nprogress.css';
 import EventList from './components/EventList';
 import NumberOfEvents from './components/NumberOfEvents';

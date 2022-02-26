@@ -9,19 +9,20 @@ class Event extends React.Component {
 	}
 
 	setCollapsed = () => {
-		this.setState(({ collapsed }) => ({ collapsed: !collapsed }));
+  this.setState(({ collapsed }) => ({ collapsed: !collapsed }));
 	};
 
 	render() {
 		const { collapsed } = this.state;
 		const { summary, location, start, htmlLink, description } =
 			this.props.event;
+      let date = new Date(start.dateTime).toLocaleString()
 
 		return (
 			<div className='event'>
 				<h1 className='summary'>{summary}</h1>
 				<p className='location'>{location}</p>
-				<p className='start-date'>{start.dateTime}</p>
+				<p className='start-date'>{date}</p>
 				{!collapsed && (
 					<div className='more-info'>
 						<a href={htmlLink} target='_blank' rel='noreferrer'>
